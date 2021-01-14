@@ -63,7 +63,7 @@ struct Plot {
 }
 
 impl Plot {
-    pub fn new_and_receiver(sample_rate: u32) -> (Self, PlotIngest) {
+    pub fn new_and_ingestor(sample_rate: u32) -> (Self, PlotIngest) {
         let buffer = triple_buffer::TripleBuffer::new([0.; 512]);
         let (buf_in, buf_out) = buffer.split();
         (
